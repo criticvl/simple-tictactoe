@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+    user-select: none;
+}
+
+body {
+    background-color: #252525;
+}
+
+
+.gameContainer {
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 8vw 8vw 8vw;
+    grid-template-rows: 8vw 8vw 8vw;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s linear;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1 !important;
+    font-size: 4vw;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #505050;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cell:hover {
+    background-color: #707070;
+}
+
+.gameEndContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.4s linear;
+}
+
+.winner {
+    font-size: 4vw;
+    color: #FFFFFF;
+}
+
+.restartButton {
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    background-color: #505050;
+    font-size: 2vw;
+    padding: 1.4vw;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.restartButton:hover {
+    background-color: #707070;
+}

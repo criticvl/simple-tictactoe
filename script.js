@@ -33,7 +33,7 @@ function drawBoard() {
     for (var j = 0; j < 3; j++) {
       var cell = document.createElement("button");
       cell.className = "cell";
-      if (board[i][j] == "NONE") {
+      if (board[i][j] === "NONE") {
         cell.textContent = "";
       } else {
         cell.textContent = board[i][j];
@@ -45,10 +45,10 @@ function drawBoard() {
 }
 
 function makeMove(i, j) {
-  if (board[i][j] == "" || board[i][j] == "X" || board[i][j] == "O") {
+  if (board[i][j] === "" || board[i][j] === "X" || board[i][j] === "O") {
     return;
   }
-  if (playerTurn % 2 == 0) {
+  if (playerTurn % 2 === 0) {
     board[i][j] = "X";
   } else {
     board[i][j] = "O";
@@ -65,58 +65,58 @@ function clearBoard() {
 function checkWin() {
   var win = false;
   if (
-    board[0][0] == board[0][1] &&
-    board[0][0] == board[0][2] &&
-    board[0][0] != "NONE"
+    board[0][0] === board[0][1] &&
+    board[0][0] === board[0][2] &&
+    board[0][0] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[1][0] == board[1][1] &&
-    board[1][0] == board[1][2] &&
-    board[1][0] != "NONE"
+    board[1][0] === board[1][1] &&
+    board[1][0] === board[1][2] &&
+    board[1][0] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[2][0] == board[2][1] &&
-    board[2][0] == board[2][2] &&
-    board[2][0] != "NONE"
+    board[2][0] === board[2][1] &&
+    board[2][0] === board[2][2] &&
+    board[2][0] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[0][0] == board[1][0] &&
-    board[0][0] == board[2][0] &&
-    board[0][0] != "NONE"
+    board[0][0] === board[1][0] &&
+    board[0][0] === board[2][0] &&
+    board[0][0] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[0][1] == board[1][1] &&
-    board[0][1] == board[2][1] &&
-    board[0][1] != "NONE"
+    board[0][1] === board[1][1] &&
+    board[0][1] === board[2][1] &&
+    board[0][1] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[0][2] == board[1][2] &&
-    board[0][2] == board[2][2] &&
-    board[0][2] != "NONE"
+    board[0][2] === board[1][2] &&
+    board[0][2] === board[2][2] &&
+    board[0][2] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[0][0] == board[1][1] &&
-    board[0][0] == board[2][2] &&
-    board[0][0] != "NONE"
+    board[0][0] === board[1][1] &&
+    board[0][0] === board[2][2] &&
+    board[0][0] !== "NONE"
   ) {
     win = true;
   }
   if (
-    board[0][2] == board[1][1] &&
-    board[0][2] == board[2][0] &&
-    board[0][2] != "NONE"
+    board[0][2] === board[1][1] &&
+    board[0][2] === board[2][0] &&
+    board[0][2] !== "NONE"
   ) {
     win = true;
   }
@@ -124,7 +124,7 @@ function checkWin() {
   if (win) {
     disableButtons();
 
-    if (playerTurn % 2 == 0) {
+    if (playerTurn % 2 === 0) {
       winner.textContent = "Player O wins!";
     } else {
       winner.textContent = "Player X wins!";
@@ -140,7 +140,7 @@ function checkWin() {
     return;
   }
 
-  if (playerTurn == 9) {
+  if (playerTurn === 9) {
     disableButtons();
 
     winner.textContent = "Draw!";
